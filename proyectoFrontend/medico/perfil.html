@@ -1,0 +1,187 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link href="../assets/css/cs-skin-elastic.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Perfil Medico</title>
+    <meta name="description" content="Perfil Medico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="../medico/principal.html"><i class="menu-icon fa fa-laptop"></i>Inicio </a></li>
+                    
+                    <li class="menu-title">Medico</li><!-- medicos -->
+                    <li><a href="../medico/perfil.html"> <i class="menu-icon fa fa-user-circle"></i>Perfil</a></li>
+                    
+                    <li><a href="../medico/gestionarPacientes.html"> <i class="menu-icon fa fa-users"></i>Gestion Pacientes</a></li>
+                    <li><a href="../medico/pdf.html"> <i class="menu-icon fa fa-file-text-o"></i>Examenes</a></li>
+                    <li class="menu-title">Extras</li><!-- extras -->
+
+                    <li><a href="javascript:logout()"> <i class="menu-icon fa fa-sign-in"></i>Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../medico/principal.html"><img src="../images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="../medico/principal.html"><img src="../images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+        </header> 
+        <div class="content">
+            <div class="animated fadeIn">                     
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-user"></i><strong class="card-title pl-2">Perfil Medico</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        
+                                        <img id="foto" class="rounded-circle mx-auto d-block" width="100" height="100">
+                                        
+                                        <h5 id="nombre" class="text-sm-center mt-2 mb-1"></h5>
+                                        <div class="location text-sm-center"><i class="fa fa-envelope"></i> <a id="correo">Correo: </a> </div>
+                                        <div class="location text-sm-center"><i class="fa fa-star"></i> <a id="especialidad">Especialidad: </a> </div>
+                                        <div class="location text-sm-center"><i class="fa fa-map-marker"></i> <a id="ciudad">Ciudad donde atiende: </a> </div>
+                                        <br><br>                       
+                                        <div class="content">
+                                            <div class="animated fadeIn">
+                                                <div class="buttons">
+                                                    <div class="row">                         
+                                                    <div class="card-header">
+                                                        <h3><i class="location text-sm-center"><i class="fa fa-comment"></i></i> Presentacion:</h3><br>
+                                                        <p id="presentacion"> (No hay presentacion) </p><br>
+                                                    </div>             
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>         
+                                    </div>
+                                    <div class="card-text text-sm-center">
+                                        
+                                        <a href="../medico/ajustarPerfil.html">
+                                        <button type="button" id="ajustar" class="btn btn-primary btn-lg btn-block"> Ajustar Perfil</button>
+                                        </a>
+                                        <!--
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" disabled> Ajustar Perfil (Disponibe cuando sea aceptado)</button>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                              
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2022 Proyecto 2 Programacion 4
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Hecho por Samuel, Jose y Rodrigo
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+        <script src="../assets/js/main.js"></script>   
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+        <script src="../assets/js/init/chartjs-init.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+    
+        <script src="../assets/js/lib/data-table/datatables.min.js"></script>
+        <script src="../assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+        <script src="../assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+        <script src="../assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+        <script src="../assets/js/lib/data-table/jszip.min.js"></script>
+        <script src="../assets/js/lib/data-table/vfs_fonts.js"></script>
+        <script src="../assets/js/lib/data-table/buttons.html5.min.js"></script>
+        <script src="../assets/js/lib/data-table/buttons.print.min.js"></script>
+        <script src="../assets/js/lib/data-table/buttons.colVis.min.js"></script>
+        <script src="../assets/js/init/datatables-init.js"></script>
+        <script src="../assets/js/verify.js"></script>
+        <script src="../controller/login_controller.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+              $('#bootstrap-data-table-export').DataTable();
+              var medico = JSON.parse(localStorage.getItem("medico"));
+              
+              if (medico.estado == "DENEGADO") {
+                document.getElementById("ajustar").disabled = true;
+                document.getElementById("ajustar").innerHTML = "Ajustar Perfil (Disponibe cuando sea aceptado)";
+              }
+
+              document.getElementById("nombre").innerHTML = medico.nombre;
+              document.getElementById("correo").innerHTML = "Correo: " + medico.correo;
+              
+              if (medico.especialidad) {
+                document.getElementById("especialidad").innerHTML = "Especialidad: " + medico.especialidad.nombre;
+              }
+
+              if (medico.ciudad) {
+                document.getElementById("ciudad").innerHTML = "Ciudad donde atiende: " + medico.ciudad.nombre;
+              }
+
+              if (medico.presentacion) {
+                document.getElementById("presentacion").innerHTML = medico.presentacion;
+              }
+
+              if (medico.foto) {
+                document.getElementById("foto").src = "data:image/jpg;base64," + medico.foto;
+              }
+
+          } );
+        </script>
+    </body>    
+</html>
